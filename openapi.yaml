@@ -16,26 +16,33 @@ externalDocs:
 servers:
   - url: https://api.wa.my.id
 tags:
-  - name: data
-    description: Data Geo Spasial
+  - name: device
+    description: Set nomoh handphone yg dugunakan
     externalDocs:
       description: Deskripsi dan Kode Program
       url: https://petapedia.github.io/gcf/get/
-  - name: auth
-    description: Auth to Access to API
+  - name: message
+    description: Mengirim pesan ke tujuan
     externalDocs:
       description: Deskripsi dan Kode Program
       url: https://petapedia.github.io/gcf/post/
   - name: user
     description: Get Token and Authorize
 paths:
-  /petapedia:
+  /device/{token}:
     get:
       tags:
-        - data
-      summary: Get Data Geospasial
-      description: List Data Geospasial
-      operationId: getGeoJSON
+        - device
+      summary: Add device as gateway wa
+      description: Menambahkan wa user ke server untuk dipakai oleh api
+      operationId: getDevice
+      parameters:
+        - in: path
+          name: token
+          schema:
+            type: string
+          required: true
+          description: Token yang diberikan kepada user
       responses:
         '200':
           description: successful operation
