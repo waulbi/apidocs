@@ -1,10 +1,8 @@
 openapi: 3.0.3
 info:
-  title: Dokumen API Cloud Function - OpenAPI 3.0
+  title: Dokumen API WhatsAuth - OpenAPI 3.0
   description: >-
-    Jelaskan disini apa saja yang perlu dijelaskan
-    termasuk informasi yang diperlukan untuk dinilai
-    term of service isi dari link repo dari swagger ini
+    Penjelasan tata cara pemakaian API dari Whatsauth
   termsOfService: https://github.com/jscroot/examples/tree/main/api/swagger
   contact:
     email: awangga@gmail.com
@@ -16,7 +14,7 @@ externalDocs:
   description: Repo GCF
   url: https://petapedia.github.io/gcf/
 servers:
-  - url: https://asia-southeast2-awangga.cloudfunctions.net
+  - url: https://api.wa.my.id
 tags:
   - name: data
     description: Data Geo Spasial
@@ -49,25 +47,25 @@ paths:
                   $ref: '#/components/schemas/Peta'
         '400':
           description: Invalid status value
-  /petapedia-post:
+  /send/message:
     post:
       tags:
-        - auth
-      summary: Login get Token
-      description: Login and Get User Token
-      operationId: authService
+        - message
+      summary: Kirim pesan teks
+      description: Mengirimkan pesan teks kepada perorangan atau group
+      operationId: sendMesageText
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Auth'
+              $ref: '#/components/schemas/TextMessage'
       responses:
         '200':
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthResponse'
+                $ref: '#/components/schemas/TextMessageResponse'
         '405':
           description: Invalid input
       security:
@@ -93,42 +91,39 @@ components:
           properties:
             name:
               type: string
-    Auth:
+    TextMessage:
       type: object
       properties:
-        username:
+        to:
           type: string
-          example: petped
-        password:
-          type: string
-          example: secret
-    AuthResponse:
-      type: object
-      properties:
-        status:
+          example: 6287752000300
+        isgroup:
           type: bool
           example: false
-        message:
+        messages:
           type: string
-          example: fehguy
-        token:
+          example: hai kak
+    TextMessageResponse:
+      type: object
+      properties:
+        response:
           type: string
-          example: fehguy
+          example: 3EB05B55C862B68AF58C97
   requestBodies:
-    AuthReq:
-      description: Request Authentication
+    TextMessageReq:
+      description: Kirim Pesan teks
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Auth'
-    UserArray:
-      description: List of user object
+            $ref: '#/components/schemas/TextMessage'
+    TextMessageResp:
+      description: Respon dari request
       content:
         application/json:
           schema:
             type: array
             items:
-              $ref: '#/components/schemas/AuthResponse'
+              $ref: '#/components/schemas/TextMessageResponse'
   securitySchemes:
     token:
       type: apiKey
