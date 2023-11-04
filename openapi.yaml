@@ -101,20 +101,20 @@ components:
       properties:
         to:
           type: string
-          example: 6287752000300
+          example: 6281111
         isgroup:
           type: bool
           example: false
         messages:
           type: string
           example: hai kak
-    DeviceResponse:
+    TextMessageResponse:
       type: object
       properties:
         response:
           type: string
           example: 3EB05B55C862B68AF58C97
-    TextMessageResponse:
+    DeviceResponse:
       type: object
       properties:
         phonenumber:
@@ -125,10 +125,10 @@ components:
           example: false
         code:
           type: string
-          example: IUYJOIJ
+          example: RGCF-L1LH
         message:
           type: string
-          example: sukses
+          example: Pair Code Device
   requestBodies:
     TextMessageReq:
       description: Kirim Pesan teks
