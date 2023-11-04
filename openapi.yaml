@@ -49,9 +49,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Peta'
+                $ref: '#/components/schemas/DeviceResponse'
         '400':
           description: Invalid status value
   /send/message:
@@ -110,12 +108,27 @@ components:
         messages:
           type: string
           example: hai kak
-    TextMessageResponse:
+    DeviceResponse:
       type: object
       properties:
         response:
           type: string
           example: 3EB05B55C862B68AF58C97
+    TextMessageResponse:
+      type: object
+      properties:
+        phonenumber:
+          type: string
+          example: 628888888
+        status:
+          type: bool
+          example: false
+        code:
+          type: string
+          example: IUYJOIJ
+        message:
+          type: string
+          example: sukses
   requestBodies:
     TextMessageReq:
       description: Kirim Pesan teks
