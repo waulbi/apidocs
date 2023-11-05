@@ -39,7 +39,7 @@ paths:
       tags:
         - signup
       summary: Pendaftaran User Baru
-      description: Melakukan pendaftaran dengan input URL WebHook dan Secret WebHook
+      description: Melakukan pendaftaran dengan input URL WebHook dan Secret WebHook dan Mendapatkan Token yang baru yang berlaku selama 30 hari
       operationId: signUpNewUser
       requestBody:
         content:
