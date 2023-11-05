@@ -19,13 +19,13 @@ tags:
   - name: signup
     description: Melakukan pendaftaran dengan input URL WebHook dan Secret WebHook
     externalDocs:
-      description: Deskripsi dan Kode Program
-      url: https://petapedia.github.io/gcf/get/
+      description: Contoh Kode WebHook
+      url: https://github.com/whatsauth/webhook
   - name: device
-    description: Set nomoh handphone yg dugunakan
+    description: Set whatsapp yg digunakan
     externalDocs:
-      description: Deskripsi dan Kode Program
-      url: https://petapedia.github.io/gcf/get/
+      description: Tata cara input kode
+      url: https://faq.whatsapp.com/1324084875126592
   - name: message
     description: Mengirim pesan ke tujuan
     externalDocs:
@@ -34,7 +34,7 @@ tags:
   - name: whatsauth
     description: Get Token and Authorize
 paths:
-  /api/signup:
+  /signup:
     post:
       tags:
         - signup
@@ -63,8 +63,8 @@ paths:
     get:
       tags:
         - device
-      summary: Add device as gateway wa
-      description: Menambahkan wa user ke server untuk dipakai oleh api
+      summary: Add device Whatsapp
+      description: Menambahkan wa user ke server untuk dipakai oleh api dengan memasukkan code dari respon server
       operationId: getDevice
       parameters:
         - in: path
