@@ -29,8 +29,8 @@ tags:
   - name: message
     description: Mengirim pesan ke tujuan
     externalDocs:
-      description: Deskripsi dan Kode Program
-      url: https://petapedia.github.io/gcf/post/
+      description: Contoh Kode Program
+      url: https://github.com/whatsauth/webhook/blob/09c999be72e25660395f27c879456938a57561d1/function.go#L36C9-L36C9
   - name: whatsauth
     description: Get Token and Authorize
 paths:
