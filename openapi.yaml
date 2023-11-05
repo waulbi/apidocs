@@ -77,6 +77,31 @@ paths:
         - token:
             - write:apiKey
             - read:apiKey
+    /whatsauth/request:
+    post:
+      tags:
+        - whatsauth
+      summary: Permintaan otorisasi aplikasi
+      description: Mengirimkan token otorisasi pada user
+      operationId: whatsauthRequest
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WhatsAuth'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TextMessageResponse'
+        '405':
+          description: Invalid input
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
 components:
   schemas:
     Peta:
@@ -108,6 +133,18 @@ components:
         messages:
           type: string
           example: hai kak
+    WhatsAuth:
+      type: object
+      properties:
+        uuid:
+          type: string
+          example: isodjaoidsjaoid
+        phonenumber:
+          type: string
+          example: 6281212
+        delay:
+          type: int
+          example: 2
     TextMessageResponse:
       type: object
       properties:
