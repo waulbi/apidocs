@@ -7,12 +7,12 @@ info:
   contact:
     email: awangga@gmail.com
   license:
-    name: WhatsAuth Package
-    url: https://pkg.go.dev/github.com/whatsauth/whatsauth
+    name: Buat dulu webhook untuk menerima dan mengirim pesan
+    url: https://github.com/whatsauth/webhook
   version: 1.0.11
 externalDocs:
-  description: Repo WhatsAuth
-  url: https://github.com/whatsauth
+  description: Pendaftaran Token Whatsauth
+  url: https://wa.my.id
 servers:
   - url: https://api.wa.my.id/api
 tags:
