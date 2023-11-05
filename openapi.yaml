@@ -77,7 +77,7 @@ paths:
         - token:
             - write:apiKey
             - read:apiKey
-    /whatsauth/request:
+  /whatsauth/request:
     post:
       tags:
         - whatsauth
