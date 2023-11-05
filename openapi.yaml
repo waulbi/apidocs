@@ -26,7 +26,7 @@ tags:
     externalDocs:
       description: Deskripsi dan Kode Program
       url: https://petapedia.github.io/gcf/post/
-  - name: user
+  - name: whatsauth
     description: Get Token and Authorize
 paths:
   /device/{token}:
