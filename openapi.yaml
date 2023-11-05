@@ -14,7 +14,7 @@ externalDocs:
   description: Repo GCF
   url: https://petapedia.github.io/gcf/
 servers:
-  - url: https://api.wa.my.id
+  - url: https://api.wa.my.id/api
 tags:
   - name: device
     description: Set nomoh handphone yg dugunakan
