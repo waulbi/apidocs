@@ -16,6 +16,11 @@ externalDocs:
 servers:
   - url: https://api.wa.my.id/api
 tags:
+  - name: signup
+    description: Melakukan pendaftaran dengan input URL WebHook dan Secret WebHook
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://petapedia.github.io/gcf/get/
   - name: device
     description: Set nomoh handphone yg dugunakan
     externalDocs:
@@ -29,6 +34,31 @@ tags:
   - name: whatsauth
     description: Get Token and Authorize
 paths:
+  /api/signup:
+    post:
+      tags:
+        - signup
+      summary: Pendaftaran User Baru
+      description: Melakukan pendaftaran dengan input URL WebHook dan Secret WebHook
+      operationId: signUpNewUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebHook'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserAccount'
+        '405':
+          description: Invalid input
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
   /device/{token}:
     get:
       tags:
@@ -104,23 +134,33 @@ paths:
             - read:apiKey
 components:
   schemas:
-    Peta:
+    WebHook:
+          type: object
+          properties:
+            url: 
+              type: string
+              example: https://webhook.com
+            secret: 
+              type: string
+              example: isju8ekf9ke
+    UserAccount:
       type: object
       properties:
-        type:
+        phonenumber:
           type: string
-        geometry:
+          example: 6281111
+        webhook:
           type: object
           properties:
-            type: 
+            url: 
               type: string
-            coordinates: 
-              type: array
-        properties:
-          type: object
-          properties:
-            name:
+              example: https://webhook.com
+            secret: 
               type: string
+              example: isju8ekf9ke
+        token:
+          type: string
+          example: v4.public.asoiduas
     TextMessage:
       type: object
       properties:
