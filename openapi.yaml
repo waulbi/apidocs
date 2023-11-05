@@ -52,7 +52,7 @@ paths:
                 $ref: '#/components/schemas/DeviceResponse'
         '400':
           description: Invalid status value
-  /send/message:
+  /send/message/text:
     post:
       tags:
         - message
