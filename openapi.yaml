@@ -15,6 +15,7 @@ externalDocs:
   url: https://wa.my.id
 servers:
   - url: https://api.wa.my.id/api
+  - url: https://cloud.wa.my.id/api
 tags:
   - name: signup
     description: Melakukan pendaftaran dengan input URL WebHook dan Secret WebHook
