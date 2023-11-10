@@ -83,7 +83,7 @@ paths:
                 $ref: '#/components/schemas/DeviceResponse'
         '400':
           description: Invalid status value
-  /device/reset/{token}:
+  /reset/device/{token}:
     get:
       tags:
         - device
