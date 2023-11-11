@@ -83,12 +83,12 @@ paths:
                 $ref: '#/components/schemas/DeviceResponse'
         '400':
           description: Invalid status value
-  /reset/device/{token}:
+  /start/device/{token}:
     get:
       tags:
         - device
-      summary: Reset device Whatsapp
-      description: Jika pengiriman pesan gagal, permintaan reset device bisa dilakukan disini.
+      summary: Start device Whatsapp setelah di daftarkan
+      description: Jika tidak di start maka pengiriman pesan gagal, permintaan start device bisa dilakukan disini.
       operationId: resetDevice
       parameters:
         - in: path
