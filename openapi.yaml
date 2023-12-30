@@ -16,7 +16,7 @@ externalDocs:
 servers:
   - url: https://api.wa.my.id/api
   - url: https://cloud.wa.my.id/api
-  - url: https://wauth.fly.dev/api
+  - url: https://apk.fly.dev/api
 tags:
   - name: signup
     description: Melakukan pendaftaran dengan input URL WebHook dan Secret WebHook
