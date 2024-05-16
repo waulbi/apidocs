@@ -19,7 +19,7 @@ servers:
   - url: https://apk.fly.dev/api
 tags:
   - name: signup
-    description: Melakukan pendaftaran dengan input URL WebHook dan Secret WebHook
+    description: Melakukan pendaftaran atau refresh token disertai URL dan Secret WebHook
     externalDocs:
       description: Contoh Kode WebHook
       url: https://github.com/whatsauth/webhook
@@ -40,8 +40,8 @@ paths:
     post:
       tags:
         - signup
-      summary: Pendaftaran User Baru
-      description: Melakukan pendaftaran dengan input URL WebHook dan Secret WebHook dan Mendapatkan Token yang baru yang berlaku selama 30 hari
+      summary: Pendaftaran Baru atau Refres Access Token
+      description: Melakukan pendaftaran atau refresh token dengan input URL dan Secret WebHook. Balasan berupa Token yang baru yang berlaku selama 30 hari
       operationId: signUpNewUser
       requestBody:
         content:
