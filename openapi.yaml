@@ -132,6 +132,31 @@ paths:
         - token:
             - write:apiKey
             - read:apiKey
+  /send/message/image:
+    post:
+      tags:
+        - message
+      summary: Kirim pesan gambar
+      description: Mengirimkan pesan gambar kepada perorangan atau group
+      operationId: sendMesageImage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImageMessage'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TextMessageResponse'
+        '405':
+          description: Invalid input
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
   /whatsauth/request:
     post:
       tags:
@@ -196,6 +221,21 @@ components:
           type: bool
           example: false
         messages:
+          type: string
+          example: hai kak
+    ImageMessage:
+      type: object
+      properties:
+        to:
+          type: string
+          example: 6281111
+        base64image:
+          type: string
+          example: iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mP8/5+hnoEIwDiqkL4KAcT9GO0U4BxoAAAAAElFTkSuQmCC
+        isgroup:
+          type: bool
+          example: false
+        caption:
           type: string
           example: hai kak
     WhatsAuth:
