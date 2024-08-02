@@ -243,7 +243,7 @@ components:
           type: string
           example: 6281111
         isgroup:
-          type: bool
+          type: boolean
           example: false
         messages:
           type: string
@@ -258,7 +258,7 @@ components:
           type: string
           example: iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mP8/5+hnoEIwDiqkL4KAcT9GO0U4BxoAAAAAElFTkSuQmCC
         isgroup:
-          type: bool
+          type: boolean
           example: false
         caption:
           type: string
@@ -276,7 +276,7 @@ components:
           type: string
           example: filename.pdf
         isgroup:
-          type: bool
+          type: boolean
           example: false
         caption:
           type: string
@@ -291,14 +291,50 @@ components:
           type: string
           example: 6281212
         delay:
-          type: int
+          type: integer
           example: 2
     TextMessageResponse:
       type: object
       properties:
-        response:
+        Timestamp:
           type: string
-          example: 3EB05B55C862B68AF58C97
+          example: 2024-08-02T06:34:58Z
+        ID:
+          type: string
+          example: 3EB0B5C35133EC28D4EA1B
+        ServerID:
+          type: integer
+          example: 0
+        DebugTimings:
+                    type: object
+                    properties:
+                      Queue:
+                        type: integer
+                        example: 480
+                      Marshal:
+                        type: integer
+                        example: 11410
+                      GetParticipants:
+                        type: integer
+                        example: 0
+                      GetDevices:
+                        type: integer
+                        example: 227151959
+                      GroupEncrypt:
+                        type: integer
+                        example: 0
+                      PeerEncrypt:
+                        type: integer
+                        example: 31024016
+                      Send:
+                        type: integer
+                        example: 98170
+                      Resp:
+                        type: integer
+                        example: 234692326
+                      Retry:
+                        type: integer
+                        example: 0
     DeviceResponse:
       type: object
       properties:
@@ -306,7 +342,7 @@ components:
           type: string
           example: 628888888
         status:
-          type: bool
+          type: boolean
           example: false
         code:
           type: string
