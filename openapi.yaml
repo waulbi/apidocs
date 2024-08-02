@@ -126,8 +126,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TextMessageResponse'
-        '405':
+        '503':
           description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
       security:
         - token:
             - write:apiKey
@@ -293,6 +297,12 @@ components:
         delay:
           type: integer
           example: 2
+    ErrorMessage:
+      type: object
+      properties:
+        error:
+          type: string
+          example: Nomor tidak terdaftar di whatsapp
     TextMessageResponse:
       type: object
       properties:
