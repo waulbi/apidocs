@@ -3,7 +3,7 @@ info:
   title: Dokumen API WhatsAuth - OpenAPI 3.0
   description: >-
     Penjelasan tata cara pemakaian API dari Whatsauth
-  termsOfService: https://whatsauth.my.id
+  termsOfService: https://wa.my.id
   contact:
     email: awangga@gmail.com
   license:
@@ -107,7 +107,7 @@ paths:
                 $ref: '#/components/schemas/DeviceResponse'
         '400':
           description: Invalid status value
-  /send/message/text:
+  /v2/send/message/text:
     post:
       tags:
         - message
