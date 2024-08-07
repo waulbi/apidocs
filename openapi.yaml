@@ -253,12 +253,12 @@ components:
     WaList:
       type: object
       properties:
-        PhoneNumbers:
+        phonenumbers:
           type: array
           items:
             $ref: '#/components/schemas/IsOnWhatsAppResponse'
       required:
-        - PhoneNumbers
+        - phonenumbers
     IsOnWhatsAppResponse:
       type: object
       properties:
