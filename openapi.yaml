@@ -105,6 +105,10 @@ paths:
                 $ref: '#/components/schemas/WaList'
         '400':
           description: Invalid status value
+      security:
+        - token:
+            - write:apiKey
+            - read:apiKey
   /v2/send/message/text:
     post:
       tags:
