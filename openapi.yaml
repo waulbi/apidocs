@@ -84,27 +84,25 @@ paths:
                 $ref: '#/components/schemas/DeviceResponse'
         '400':
           description: Invalid status value
-  /start/device/{token}:
-    get:
+  /numbers/isonwa:
+    post:
       tags:
         - device
-      summary: Start device Whatsapp setelah di daftarkan
-      description: Jika tidak di start maka pengiriman pesan gagal, permintaan start device bisa dilakukan disini.
-      operationId: resetDevice
-      parameters:
-        - in: path
-          name: token
-          schema:
-            type: string
-          required: true
-          description: Token yang diberikan kepada user
+      summary: Cek apakan nomor sudah terdaftar di Whatsapp atau belum
+      description: Pengecekan daftar nomor yang akan di cek apakah ada di whatsapp atau belum
+      operationId: isOnWhatsApp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PhoneList'
       responses:
         '200':
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeviceResponse'
+                $ref: '#/components/schemas/WaList'
         '400':
           description: Invalid status value
   /v2/send/message/text:
@@ -213,6 +211,71 @@ paths:
             - read:apiKey
 components:
   schemas:
+    JID:
+      type: object
+      properties:
+        User:
+          type: string
+          description: The user ID
+        RawAgent:
+          type: integer
+          format: int32
+          description: The raw agent
+        Device:
+          type: integer
+          format: int32
+          description: The device ID
+        Integrator:
+          type: integer
+          format: int32
+          description: The integrator ID
+        Server:
+          type: string
+          description: The server
+      required:
+        - User
+        - RawAgent
+        - Device
+        - Integrator
+        - Server
+    VerifiedName:
+      type: object
+      properties:
+        Name:
+          type: string
+          description: The verified business name
+        Certainty:
+          type: string
+          description: The certainty of the verification
+      required:
+        - Name
+        - Certainty
+    WaList:
+      type: object
+      properties:
+        PhoneNumbers:
+          type: array
+          items:
+            $ref: '#/components/schemas/IsOnWhatsAppResponse'
+      required:
+        - PhoneNumbers
+    IsOnWhatsAppResponse:
+      type: object
+      properties:
+        Query:
+          type: string
+          description: The query string used
+        JID:
+          $ref: '#/components/schemas/JID'
+        IsIn:
+          type: boolean
+          description: Whether the phone is registered or not
+        VerifiedName:
+          $ref: '#/components/schemas/VerifiedName'
+      required:
+        - Query
+        - JID
+        - IsIn
     WebHook:
           type: object
           properties:
@@ -240,6 +303,21 @@ components:
         token:
           type: string
           example: v4.public.asoiduas
+    PhoneList:
+      type: object
+      properties:
+        phoneNumbers:
+          type: array
+          items:
+            type: string
+          description: Daftar nomor telepon
+      required:
+        - phoneNumbers
+      example:
+        phoneNumbers:
+          - "08123456789"
+          - "81234567890"
+          - "628123456789"
     TextMessage:
       type: object
       properties:
