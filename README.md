@@ -2,6 +2,7 @@
 
 [Editor](https://editor.swagger.io/) dan [URL](https://wa.my.id/apidocs/openapi.yaml)
 # authorize
+masuk ke website https://wa.ulbi.ac.id/apidocs 
 masukan token di bagian authorize, ada dibagian paling atas sebelah kanan
 
 # Pendaftaran, refresh token dengan input URL dan Secret WebHook
