@@ -3,7 +3,24 @@
 cara menggunakan API WhatsAuth untuk pendaftaran, otorisasi, menambahkan pengguna, dan mengirim pesan melalui WhatsApp. Akses editor Swagger [di sini](https://editor.swagger.io/) dan file OpenAPI YAML [di sini](https://wa.my.id/apidocs/openapi.yaml).
 
 # Wa bisnis
-siapakan nomor wa bisnis tambahkan di database
+siapakan nomor wa bisnis tambahkan di database pamongdesa collection profile
+```{
+  "token": "",
+  "phonenumber": "62....",
+  "secret": "",
+  "url": "http://172.18.0.147:8080/webhook/nomor/62...",
+  "urlapitext": "http://172.18.0.148:8080/api/v2/send/message/text",
+  "urlapiimage": "http://172.18.0.148:8080/api/send/message/image",
+  "urlapidoc": "http://172.18.0.148:8080/api/send/message/document",
+  "urlqrlogin": "http://172.18.0.148:8080/api/whatsauth/request",
+  "qrkeyword": "wh4t5auth0",
+  "publickey": "",
+  "botname": "Peedee",
+  "triggerword": "pd",
+  "telegramtoken": "",
+  "telegramname": ""
+}
+```
 
 ## 1. Pendaftaran dan Refresh Token
 
