@@ -1,36 +1,42 @@
 # Dokumentasi OpenAPI WhatsAuth
 
-[Editor](https://editor.swagger.io/) dan [URL](https://wa.my.id/apidocs/openapi.yaml)
-# authorize
-masuk ke website https://wa.ulbi.ac.id/apidocs 
-masukan token di bagian authorize, ada dibagian paling atas sebelah kanan
+cara menggunakan API WhatsAuth untuk pendaftaran, otorisasi, menambahkan pengguna, dan mengirim pesan melalui WhatsApp. Akses editor Swagger [di sini](https://editor.swagger.io/) dan file OpenAPI YAML [di sini](https://wa.my.id/apidocs/openapi.yaml).
 
-# Pendaftaran, refresh token dengan input URL dan Secret WebHook
-masuk ke website https://wa.ulbi.ac.id/apidocs 
-bagian signup, methode POST, try it out|
-{
-  "url": "",
-  "secret": ""
-}
-masukan url "https://msg.ulbi.ac.id/webhook/nomor/62..."
-masukan secret|
-execute
-Balasan berupa Token yang baru
+## 1. Pendaftaran dan Refresh Token
 
+Untuk mendaftarkan webhook URL dan mendapatkan token baru:
+Buka [halaman API WhatsAuth](https://wa.ulbi.ac.id/apidocs).
+bagian **`signup`** dengan metode **POST**.
+Klik **Try it out** untuk mengisi parameter.
+   ```json
+   {
+     "url": "https://msg.ulbi.ac.id/webhook/nomor/62...",
+     "secret": "masukkan_secret_anda"
+   }
+   ```
+**Execute** 
 
-# Menambahkan wa user ke server
-masuk ke website https://wa.ulbi.ac.id/apidocs|
-bagian device methode GET, try it out|
-masukan token(Token yang diberikan kepada user), execute
+   Setelah dieksekusi, balasan berupa **Token** yang baru.
 
-# Mengirim pesan
-masukan nomor tujuan|
-{
-  "to": "62",
-  "isgroup": false,
-  "messages": "hai kak"
-}
-execute
+## 2. Authorize
 
+ masukkan token di bagian **Authorize** di halaman API.
 
+## 3. Menambahkan Pengguna WhatsApp ke Server
 
+Pilih bagian **`device`** dengan metode **GET**.
+Klik **Try it out** masukkan token.
+**Execute**
+
+## 4. Mengirim Pesan
+
+   ```json
+   {
+     "to": "62nomortujuan",
+     "isgroup": false,
+     "messages": "hai kak"
+   }
+   ```
+ **Execute**
+
+- Pastikan token sudah dikasukan dibagian Authorize sebelum testing.
