@@ -21,8 +21,11 @@ siapakan nomor wa bisnis tambahkan di database pamongdesa collection profile
   "telegramname": ""
 }
 ```
+## 2. Authorize
 
-## 1. Pendaftaran dan Refresh Token
+ masukkan token di bagian **Authorize** di halaman API.
+
+## 2. Pendaftaran dan Refresh Token
 
 Untuk mendaftarkan webhook URL dan mendapatkan token baru:
 Buka [halaman API WhatsAuth](https://wa.ulbi.ac.id/apidocs).
@@ -37,10 +40,6 @@ Klik **Try it out** untuk mengisi parameter.
 **Execute** 
 
    Setelah dieksekusi, balasan berupa **Token** yang baru.
-
-## 2. Authorize
-
- masukkan token di bagian **Authorize** di halaman API.
 
 ## 3. Menambahkan Pengguna WhatsApp ke Server
 
