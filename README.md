@@ -10,7 +10,7 @@ bagian **`signup`** dengan metode **POST**.
 Klik **Try it out** untuk mengisi parameter.
    ```json
    {
-     "url": "https://msg.ulbi.ac.id/webhook/nomor/62...",
+     "url": "http://172.18.0.147:8080/webhook/nomor/62...",
      "secret": "masukkan_secret_anda"
    }
    ```
