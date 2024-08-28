@@ -15,6 +15,7 @@ bagian signup, methode POST, try it out|
 masukan url "https://msg.ulbi.ac.id/webhook/nomor/62..."
 masukan secret|
 execute
+Balasan berupa Token yang baru
 
 
 # Menambahkan wa user ke server
