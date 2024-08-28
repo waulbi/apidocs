@@ -3,7 +3,7 @@ info:
   title: Dokumen API WhatsAuth - OpenAPI 3.0
   description: >-
     Penjelasan tata cara pemakaian API dari Whatsauth
-  termsOfService: https://wa.my.id
+  termsOfService: https://gw.ulbi.ac.id
   contact:
     email: awangga@gmail.com
   license:
@@ -12,11 +12,9 @@ info:
   version: 1.0.11
 externalDocs:
   description: Pendaftaran Token Whatsauth
-  url: https://wa.my.id
+  url: https://gw.ulbi.ac.id
 servers:
-  - url: https://api.wa.my.id/api
-  - url: https://cloud.wa.my.id/api
-  - url: https://apk.fly.dev/api
+  - url: https://gw.ulbi.ac.id/api
 tags:
   - name: signup
     description: Melakukan pendaftaran atau refresh token disertai URL dan Secret WebHook
