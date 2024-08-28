@@ -4,23 +4,23 @@
 
 # Pendaftaran, refresh token dengan input URL dan Secret WebHook
 masuk ke website https://wa.ulbi.ac.id/apidocs 
-bagian signup, methode POST, try it out/n 
+bagian signup, methode POST, try it out|
 {
   "url": "",
   "secret": ""
 }
 masukan url "https://msg.ulbi.ac.id/webhook/nomor/62..."
-masukan secret/n
+masukan secret|
 execute
 
 
 # Menambahkan wa user ke server
-masuk ke website https://wa.ulbi.ac.id/apidocs/n 
-bagian device methode GET, try it out/n
+masuk ke website https://wa.ulbi.ac.id/apidocs|
+bagian device methode GET, try it out|
 masukan token(Token yang diberikan kepada user), execute
 
 # Mengirim pesan
-masukan nomor/n
+masukan nomor|
 {
   "to": "62",
   "isgroup": false,
