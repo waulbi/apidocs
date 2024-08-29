@@ -3,7 +3,14 @@
 cara menggunakan API WhatsAuth untuk pendaftaran, otorisasi, menambahkan pengguna, dan mengirim pesan melalui WhatsApp. Akses editor Swagger [di sini](https://editor.swagger.io/) dan file OpenAPI YAML [di sini](https://wa.my.id/apidocs/openapi.yaml).
 
 # Wa bisnis
-siapakan nomor wa bisnis tambahkan di database pamongdesa collection profile
+siapakan nomor wa bisnis
+Lalu di wa bisnis masuk ke bagian perangkat tertaut untuk menaut kan perangkat
+pilih tautkan dengan nomor telepon saja, ada di bagian paling bawah setelah mengklik tautkan perangkat
+akan ada halaman untuk memasukan kode, untuk mendapatkan kode
+Masuk ke dashboard domyikado, dibagian sidebar terdapat masuk menu profile lalu pilih linked device
+![Foto Penulis 3](Penulis3.jpg)
+
+ tambahkan di database pamongdesa collection profile
 ```{
   "token": "",
   "phonenumber": "62....",
@@ -58,4 +65,4 @@ Klik **Try it out** masukkan token.
    ```
  **Execute**
 
-- Pastikan token sudah dikasukan dibagian Authorize sebelum testing.
+- Pastikan token sudah dimasukan dibagian Authorize sebelum testing.
