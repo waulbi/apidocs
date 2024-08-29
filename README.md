@@ -4,11 +4,8 @@ cara menggunakan API WhatsAuth untuk pendaftaran, otorisasi, menambahkan penggun
 
 # Wa bisnis
 siapakan nomor wa bisnis
-Lalu di wa bisnis masuk ke bagian perangkat tertaut untuk menaut kan perangkat
-pilih tautkan dengan nomor telepon saja, ada di bagian paling bawah setelah mengklik tautkan perangkat
-akan ada halaman untuk memasukan kode, untuk mendapatkan kode
-Masuk ke dashboard domyikado, dibagian sidebar terdapat masuk menu profile lalu pilih linked device
-![Foto Penulis 3](Penulis3.jpg)
+Masuk ke login.ulbi.ac.id, jika ada notif login dengan google abaikan/close, silangkan login dengan scan barcode.
+jika login berhasil maka akan muncul token.
 
  tambahkan di database pamongdesa collection profile
 ```{
@@ -28,12 +25,13 @@ Masuk ke dashboard domyikado, dibagian sidebar terdapat masuk menu profile lalu 
   "telegramname": ""
 }
 ```
-## 2. Authorize
+### Melakukan Pendaftaran nomor di WAAPI
 
- masukkan token di bagian **Authorize** di halaman API.
+## 1. Authorize
+Buka [halaman API WhatsAuth](https://wa.ulbi.ac.id/apidocs)
+masukkan token di bagian **Authorize** di halaman API.
 
 ## 2. Pendaftaran dan Refresh Token
-
 Untuk mendaftarkan webhook URL dan mendapatkan token baru:
 Buka [halaman API WhatsAuth](https://wa.ulbi.ac.id/apidocs).
 bagian **`signup`** dengan metode **POST**.
@@ -47,12 +45,18 @@ Klik **Try it out** untuk mengisi parameter.
 **Execute** 
 
    Setelah dieksekusi, balasan berupa **Token** yang baru.
+masukan **Token** baru di  **Authorize** mengganti token sebelumnya.
 
 ## 3. Menambahkan Pengguna WhatsApp ke Server
 
 Pilih bagian **`device`** dengan metode **GET**.
 Klik **Try it out** masukkan token.
 **Execute**
+maka akan muncul 
+**code** untuk dimasukan di bagian tautkan perangkat wa bisnis
+buka wa bisnis masuk ke bagian perangkat tertaut
+pilih tautkan dengan nomor telepon saja, ada di bagian paling bawah setelah mengklik tautkan perangkat
+akan ada halaman untuk memasukan kode
 
 ## 4. Mengirim Pesan
 
