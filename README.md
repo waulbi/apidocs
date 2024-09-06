@@ -4,8 +4,6 @@ cara menggunakan API WhatsAuth untuk pendaftaran, otorisasi, menambahkan penggun
 
 # Wa bisnis
 siapakan nomor wa bisnis
-Masuk ke login.ulbi.ac.id, jika ada notif login dengan google abaikan/close, silangkan login dengan scan barcode.
-jika login berhasil maka akan muncul token.
 
  tambahkan di database pamongdesa collection profile
 ```{
