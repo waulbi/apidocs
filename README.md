@@ -23,6 +23,17 @@ siapakan nomor wa bisnis
   "telegramname": ""
 }
 ```
+tambahkan di database waapi collection profile
+```
+{
+"token":" ",
+  "phonenumber": "628...",
+  "secret": "",
+  "url": "http://172.18.0.147:8080/webhook/inbox",
+  "qrkeyword": "wh4t5auth0"
+}
+```
+
 ### Melakukan Pendaftaran nomor di WAAPI
 
 ## 1. Authorize
