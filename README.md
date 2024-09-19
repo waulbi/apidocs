@@ -79,3 +79,53 @@ akan ada halaman untuk memasukan kode
  **Execute**
 
 - Pastikan token sudah dimasukan dibagian Authorize sebelum testing.
+
+
+# menambahkan nomor di leafly
+
+tambahkan nomor di database pamongdesa koleksi config
+
+```
+{
+  "leaflyurl": "http://172.18.0.149:8080/face/detect",
+  "leaflysecret": "",
+  "phonenumber": "628....",
+  "domyikadosecret": "",
+  "domyikadopresensiurl": "https://asia-southeast2-awangga.cloudfunctions.net/domyid/notif/ux/postpresensi/628...",
+  "domyikadotasklisturl": "https://asia-southeast2-awangga.cloudfunctions.net/domyid/notif/ux/posttasklists/628...",
+  "leaflyurlktp": "https://lea.fly.dev/ktp/detect",
+  "leaflyurllmsdesagambar": "http://172.18.0.149:8080/arsip/gambar/lmsdesa",
+  "leaflyurllmsdesafile": "http://172.18.0.149:8080/arsip/file/lmsdesa",
+  "domyikadouserurl": "https://asia-southeast2-awangga.cloudfunctions.net/domyid/data/user/wa/628...",
+  "siakadloginurl": "https://asia-southeast2-domytest.cloudfunctions.net/domytest/login",
+  "bapurl": "https://asia-southeast2-domytest.cloudfunctions.net/domytest/BAP",
+  "approvebimbinganbypoinurl": "https://asia-southeast2-awangga.cloudfunctions.net/domyid/approvebimbingan",
+  "approvebimbinganurl": "https://asia-southeast2-domytest.cloudfunctions.net/domytest/approve/bimbingan",
+  "urlkimseokgis": "https://asia-southeast2-gis-project-401902.cloudfunctions.net/backend-ai/chatDomykado",
+  "approvebapurl": "https://asia-southeast2-domytest.cloudfunctions.net/domytest/ApproveBAP",
+  "cekapprovalbapurl": "https://asia-southeast2-domytest.cloudfunctions.net/domytest/StatusApproval"
+}
+```
+
+lalu tambahkan di koleksi module
+masukan ke bagian dengan name: presensi-masuk, presensi-pulang, selfie-masuk, selfie-pulang
+```
+{
+  "name": "presensi-masuk",
+  "keyword": [
+    "cekin",
+    "presensi",
+    "masuk"
+  ],
+  "phonenumbers": [
+    "628...",
+    "628...",
+    "628...",
+    "628..."
+  ],
+  "group": true,
+  "personal": true
+}
+```
+
+
